@@ -1,12 +1,12 @@
 {
-	"name" : "",
-	"server_url" : "",
-	"server_secret" : "",
+	"name" : "Go!",
+	"server_url" : "https://hasbrohack.appspot.com/",
+	"server_secret" : "520fa900cb1ff009ec74",
 
 	/*
 	 * Specify the name of the desired theme
 	 */
-	"theme" : "twentythirteen",
+	"theme" : "starter",
 
 	/*
 	 * plugins add to the functionality of Plus.io Frontend
