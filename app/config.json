@@ -1,0 +1,20 @@
+{
+	"name" : "",
+	"server_url" : "",
+	"server_secret" : "",
+
+	/*
+	 * Specify the name of the desired theme
+	 */
+	"theme" : "twentythirteen",
+
+	/*
+	 * plugins add to the functionality of Plus.io Frontend
+	 */
+	"plugins" : ["leaflet"],
+
+	/*
+	 * This array specifies the names of javascript files in your app/includes/scripts folder
+	 */
+	"scripts" : ["controllers"]
+}

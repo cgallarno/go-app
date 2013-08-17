@@ -1,0 +1,18 @@
+{
+	"title" : "Starter Theme",
+	"author" : "citizenhub",
+
+	"files" : {
+		"css" : ["css/bootstrap.min"],
+		"js" : []
+	},
+
+	"routes" : [
+		{
+			"path" : "/home",
+			"template" : "home",
+			"controller" : "homeController"
+		},
+		{ "otherwise" : "/home" }
+	]
+}

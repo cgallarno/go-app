@@ -1,0 +1,6 @@
+<ul id="list" class="nav nav-tabs nav-stacked" ng-show="collection.data">
+	<!-- loops thru each record found in $scope.collection.data  -->
+	<li ng-repeat="item in collection.data | filter:search" class="item">
+		<a>{{ item.name }}</a>
+	</li>
+</ul>

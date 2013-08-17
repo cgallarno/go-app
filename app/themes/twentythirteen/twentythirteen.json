@@ -1,0 +1,30 @@
+{
+	/*
+	 * Theme name, must be identical to the directory name
+	 */
+	"title" : "Twenty Thirteen",
+	"author" : "citizenhub",
+
+	/*
+	 * files refer to css and js files that your theme requires.
+	 * these paths are relative to the root of your theme directory
+	 */
+	"files" : {
+		"css" : ["css/bootstrap.min", "css/style"],
+		"js" : ["js/theme_controllers"]
+	},
+
+	/*
+	 * Routes determine the uri's in your application and here you can map those to layouts, templates and controllers
+	 * on the path and template are required, the rest are optional.
+	 * Because how the paths and routing work, you need run plus.io Frontend on a local server such as xampp (http://www.apachefriends.org/en/xampp.html) or mamp (http://www.mamp.info/en/index.html)
+	 */
+	"routes" : [
+		{ "path" : "/home",			"layout" : "layouts/main",		"template" : "home",		"controller" : "homeController",					"title" : "Home",	"class" : "home" },
+		{ "path" : "/items",		"layout" : "layouts/main",		"template" : "list",		"controller": "homeController", "title" : "Data",	"class" : "list" },	
+		{ "path" : "/item/:id",		"layout" : "layouts/main",		"template" : "single",	   	"title" : "List",	"class" : "list" },				
+		{ "path" : "/map",			"layout" : "layouts/main",		"template" : "map",			"controller" : "mapController",				"title" : "Map",	"class" : "globe" },
+		{ "path" : "/pages/about",	"layout" : "layouts/modal",		"template" : "about" },
+		{ "otherwise" : "/home" }
+	]
+}

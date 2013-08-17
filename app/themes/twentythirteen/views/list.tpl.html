@@ -1,0 +1,24 @@
+<!-- adding the scrollable directive enables momentum scroll on this element, that make it appear more native.-->
+<div id="scroll-area" scrollable parameters="{{ {} }}" style="margin-top: 10px;">
+	<ng-include src="app.paths.element('plus.ui')"></ng-include>
+
+	<!--  This element will pull data from the collection you specify.  -->
+	<plus-data collection="" offset="0" limit="10">
+		<form class="form-search">
+			<input type="text" ng-model="search" class="input-block-level search-query" placeholder="Search">
+		</form>
+
+		<!-- Brining in an element by specifying the element name in the app.paths.element() function -->
+		<ng-include src="app.paths.element('loop')"></ng-include>
+
+		<!-- Show message if no records are found matching the search query-->
+		<div ng-show="(collection.data | filter:search).length==0">
+			There are no results for given query
+		</div>
+
+		<!-- Shows message if there are no records at all.  -->
+		<div ng-hide="collection.data">
+			No Data loaded :(
+		</div>
+	</plus-data>
+</div>
