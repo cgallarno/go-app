@@ -73,6 +73,13 @@ $app.factory('auth', ['$http', 'plusCollection', '$location', '$rootScope', func
 					break;
 				case 'google':
 
+					var config = {
+						google_id : settings.app.google_id,
+						scope : "https://www.googleapis.com/auth/userinfo.email " + settings.app.google_scope,
+						redirect_uri : settings.app.google_redirect,
+						email : (functions.isLoggedIn())?functions.get('email'):((!_.isUndefined(functions.get('hint')))?functions.get('hint'):'')
+					}
+
 					if(!_.isUndefined(this.get('expires')) && this.get('expires') > new Date().getTime() && forceUpdate !== true){
 						var now = new Date().getTime();
 						var remainder = ((this.get('expires') - now) / 1000) / 60;
@@ -82,6 +89,8 @@ $app.factory('auth', ['$http', 'plusCollection', '$location', '$rootScope', func
 					}
 
 					var response;
+					console.log('GOOGLED');
+
 		    		var authWindow = window.open(sprintf('https://accounts.google.com/o/oauth2/auth?response_type=token&client_id=%(google_id)s&scope=%(scope)s&redirect_uri=%(redirect_uri)s&login_hint=%(email)s', config), '_blank', 'location=no');
 		    		
 		    		authWindow.addEventListener('loadstart', function(event) {
@@ -170,13 +179,6 @@ $app.factory('auth', ['$http', 'plusCollection', '$location', '$rootScope', func
 		isTokenValid : function(){
 			return this.get('expires') > new Date().getTime();
 		}
-	}
-
-	var config = {
-		google_id : settings.app.google_id,
-		scope : "https://www.googleapis.com/auth/userinfo.email " + settings.app.google_scope,
-		redirect_uri : settings.app.google_redirect,
-		email : (functions.isLoggedIn())?functions.get('email'):((!_.isUndefined(functions.get('hint')))?functions.get('hint'):'')
 	}
 
 	return functions;

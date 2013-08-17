@@ -1,17 +1,31 @@
 'use strict';
 
-/* Variables:
- * 1) $scope: assign objects, arrays and function to $scope to access them from the view.
- */
- 
-$app.controller('homeController', function ($scope) {
-  // defaulting the time on Angular's model variable.
-  $scope.time = Date.now();
+$app.run(function($rootScope, $navigate){
+	$rootScope.$on('$routeChangeStart', function(){
+		if(!plus.auth.isLoggedIn()){
+			$navigate.go('/login');
+		}
+	});
+});
 
-  setInterval(function(){
-  	$scope.$apply(function(){
-    	$scope.time = new Date().getTime();
-  	});
-  }, 1000);
+$app.controller('loginController', function($scope, $navigate){
+	if(plus.auth.isLoggedIn()){
+		$navigate.go('/home');
+	}
+
+	$scope.login = function(){
+		plus.auth.login('google', true);
+	}
+
+	$scope.$on('authUpdated', function(event, data){
+	  if(plus.auth.isLoggedIn()){
+	  	alert('loggedIn');
+	  	$navigate.go('/home');
+	  }
+	});
+});
+
+$app.controller('homeController', function ($scope) {
+
 
 });

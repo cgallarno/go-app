@@ -1,0 +1,40 @@
+#login-page{
+	background: #a5cc39;
+	background: -moz-linear-gradient(top, #a5cc39 0%, #77a741 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#a5cc39), color-stop(100%,#77a741));
+	background: -webkit-linear-gradient(top, #a5cc39 0%,#77a741 100%);
+	background: -o-linear-gradient(top, #a5cc39 0%,#77a741 100%);
+	background: -ms-linear-gradient(top, #a5cc39 0%,#77a741 100%);
+	background: linear-gradient(to bottom, #a5cc39 0%,#77a741 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a5cc39', endColorstr='#77a741',GradientType=0 );
+
+	width: 100%;
+	height: 100%;
+	text-align: center;
+}
+
+	#login-page #logo{
+		width: 150px;
+		padding-top: 20%;
+		margin: auto;
+	}
+
+	#login-page #login-button{
+		position: absolute;
+		bottom: 100px;
+		text-align: center;
+		width: 100%;
+	}
+
+		#login-page #login-button button{
+			margin: auto;
+			background-image: url('../../../../images/login.png');
+			background-size: 100%;
+			background-color: transparent;
+			width: 240px;
+			height: 65px;
+			border: none;
+			border-radius: 2px;
+			border-bottom: 5px solid #6a923b;
+			padding-bottom: 10px;
+		}

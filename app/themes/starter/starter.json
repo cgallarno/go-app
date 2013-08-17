@@ -3,16 +3,21 @@
 	"author" : "citizenhub",
 
 	"files" : {
-		"css" : ["css/bootstrap.min"],
+		"css" : ["css/bootstrap.min", "css/go"],
 		"js" : []
 	},
 
 	"routes" : [
 		{
+			"path" : "/login",
+			"template" : "login",
+			"controller" : "loginController"
+		},
+		{
 			"path" : "/home",
 			"template" : "home",
 			"controller" : "homeController"
 		},
-		{ "otherwise" : "/home" }
+		{ "otherwise" : "/login" }
 	]
 }
