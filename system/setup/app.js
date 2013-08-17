@@ -118,7 +118,7 @@ angular.module('app', ['app.dependencies']).
     $rootScope.$navigate = $navigate;
 
     if(settings.languages.preferredLanguage !== false && !_.isEmpty(settings.languages)){
-      console.log(settings);
+      //console.log(settings);
 	    $rootScope.setLanguage = function (langKey) {
 	      $translate.uses(langKey);
 	    };

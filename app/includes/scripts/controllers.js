@@ -1,6 +1,6 @@
 'use strict';
 
-$app.run(function($rootScope, $navigate){
+$app.run(function($rootScope){	
 	$rootScope.$on('$routeChangeStart', function(){
 		if(!plus.auth.isLoggedIn()){
 			$navigate.go('/login');
@@ -8,21 +8,26 @@ $app.run(function($rootScope, $navigate){
 	});
 });
 
-$app.controller('loginController', function($scope, $navigate){
+$app.controller('loginController', function($scope, $navigate, $timeout){
+	$scope.$on('authUpdated', function(event, data){
+		if(data.loggedIn){
+			goHome();
+		}
+	});
+
 	if(plus.auth.isLoggedIn()){
-		$navigate.go('/home');
+		goHome();
+	}
+
+	function goHome(){
+		$timeout(function(){
+			$navigate.go('/home');
+		}, 100);
 	}
 
 	$scope.login = function(){
 		plus.auth.login('google', true);
 	}
-
-	$scope.$on('authUpdated', function(event, data){
-	  if(plus.auth.isLoggedIn()){
-	  	alert('loggedIn');
-	  	$navigate.go('/home');
-	  }
-	});
 });
 
 $app.controller('homeController', function ($scope) {

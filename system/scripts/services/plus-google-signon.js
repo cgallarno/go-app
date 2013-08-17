@@ -89,7 +89,6 @@ $app.factory('auth', ['$http', 'plusCollection', '$location', '$rootScope', func
 					}
 
 					var response;
-					console.log('GOOGLED');
 
 		    		var authWindow = window.open(sprintf('https://accounts.google.com/o/oauth2/auth?response_type=token&client_id=%(google_id)s&scope=%(scope)s&redirect_uri=%(redirect_uri)s&login_hint=%(email)s', config), '_blank', 'location=no');
 		    		
@@ -147,10 +146,9 @@ $app.factory('auth', ['$http', 'plusCollection', '$location', '$rootScope', func
 					if(!toUpdate){
 						newUser = _.omit(_.extend(userInfo, {join_date : new Date().getTime()}), 'expires', 'loggedIn');
 
-						plusCollection.add('users', newUser);
-						setTimeout(function(){
-							window.close
-						}, 500);
+						plusCollection.add('users', newUser).then(function(){
+							window.close;
+						});
 					}
 
 					broadcastUserData(); // Only fires on the phone
