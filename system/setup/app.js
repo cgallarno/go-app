@@ -28,7 +28,7 @@ angular.module('app', ['app.dependencies']).
             $translateProvider.translations(key, val);
           });
 
-          $translateProvider.uses('es');
+          $translateProvider.uses(settings.app.preferred_language);
           $translateProvider.useLocalStorage();
         }
       }

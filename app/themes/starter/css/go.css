@@ -1,7 +1,14 @@
 body{
 	font-family: robotoThin;
 }
+/*
+#scroll-area{
+	overflow:visible!important;
+	position: absolute;
+	top:75px;
 
+}
+*/
 #login-page{
 	background: #a5cc39;
 	background: -moz-linear-gradient(top, #a5cc39 0%, #77a741 100%);
@@ -92,7 +99,7 @@ header{
 		}
 
 .content{
-	position: absolute;
+	position: absolute!important;
 	top: 75px;
 	bottom: 75px;
 	left: 0;

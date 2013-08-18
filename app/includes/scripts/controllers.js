@@ -32,4 +32,13 @@ $app.controller('loginController', function($scope, $navigate, $timeout){
 
 $app.controller('homeController', function ($scope) {
 
+	//$scope.children = localStorage.children;
+
+	if(_.isUndefined(localStorage.children)){
+		//add Child
+	}else{
+		$scope.children = angular.fromJson(localStorage.children);
+	}
+
+
 });
