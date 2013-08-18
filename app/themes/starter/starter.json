@@ -3,7 +3,7 @@
 	"author" : "citizenhub",
 
 	"files" : {
-		"css" : ["css/bootstrap.min", "css/go"],
+		"css" : ["css/bootstrap.min", "css/go", "css/animations"],
 		"js" : []
 	},
 
@@ -19,6 +19,27 @@
 			"layout" : "layouts/main",
 			"controller" : "homeController",
 			"id" : "home-page"
+		},
+		{
+			"path" : "/add",
+			"template" : "add",
+			"layout" : "layouts/main",
+			"controller" : "addController",
+			"id" : "add-page"
+		},
+		{
+			"path" : "/settings",
+			"template" : "settings",
+			"layout" : "layouts/main",
+			"controller" : "settingsController",
+			"id" : "settings-page"
+		},
+		{
+			"path" : "/child/:code",
+			"template" : "child",
+			"layout" : "layouts/main",
+			"controller" : "childController",
+			"id" : "child-page"
 		},
 		{ "otherwise" : "/login" }
 	]

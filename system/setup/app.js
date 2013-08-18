@@ -28,8 +28,11 @@ angular.module('app', ['app.dependencies']).
             $translateProvider.translations(key, val);
           });
 
-          $translateProvider.uses(settings.app.preferred_language);
+          var theLang = (_.isUndefined(localStorage.lang))? settings.app.preferred_language: localStorage.lang;
+
+          $translateProvider.uses(theLang);
           $translateProvider.useLocalStorage();
+          localStorage.lang = theLang;
         }
       }
     }, 200);    

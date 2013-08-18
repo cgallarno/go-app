@@ -4,10 +4,18 @@
 	</div>
 
 	<ul>
-		<li>Jimmy <span class="action-icon pull-right"><img src="images/arrow-right.png" class="arrow"> <img src="images/delete_ico.png" class="delete"></span></li>
-		<li>Jimmy <span class="action-icon pull-right"><img src="images/arrow-right.png" class="arrow"> <img src="images/delete_ico.png" class="delete"></span></li>
-		<li>Jimmy <span class="action-icon pull-right"><img src="images/arrow-right.png" class="arrow"> <img src="images/delete_ico.png" class="delete"></span></li>
-		<li>Jimmy <span class="action-icon pull-right"><img src="images/arrow-right.png" class="arrow"> <img src="images/delete_ico.png" class="delete"></span></li>
-		<li>Jimmy <span class="action-icon pull-right"><img src="images/arrow-right.png" class="arrow"> <img src="images/delete_ico.png" class="delete"></span></li>
+		<li ng-repeat="child in children | filter:search" hm-swipe-left="toggleDelete($index)" hm-swipe-right="toggleDelete($index)">
+			<div class="child-name" hm-tap="$navigate.go('/child/' + {{ child.code }})">
+				{{ child.name }} 
+			</div>
+			<span class="action-icon pull-right">
+				<img src="images/arrow-right.png" class="arrow" id="arrow-btn-{{ $index }}">
+				<img src="images/delete_ico.png" class="delete" id="delete-btn-{{ $index }}" hm-tap="delete($index)">
+			</span>
+		</li>
 	</ul>
+
+	<div id="no-children" ng-hide="children.length">
+		<div>{{ 'NO_CHILDREN' | translate }}. <br> <button class="btn btn-primary" hm-tap="$navigate.go('/add')">{{ 'ADD_CHILDREN' | translate }}</button></div>
+	</div>
 </div>

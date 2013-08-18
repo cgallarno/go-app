@@ -81,7 +81,7 @@ header{
 	}
 
 		#completed img{
-			width: 30px;
+			width: 20px;
 		}
 
 		#completed .notifications{
@@ -94,7 +94,7 @@ header{
 			left: -20px;
 			text-align: center;
 			line-height: 40px;
-			font-size: 16px;
+			font-size: 12px;
 			color: #fff;
 		}
 
@@ -133,15 +133,15 @@ footer{
 	}
 
 	#nav li img{
-		width: 30px;
+		width: 20px;
 		opacity: .4;
 	}
 
-	#home-page + footer nav .home, #list-page + footer nav .list, #settings-page + footer nav .settings{
+	#home-page + footer nav .home, #add-page + footer nav .add, #settings-page + footer nav .settings{
 		background: #8bb947;
 	}
 
-	#home-page + footer nav .home img, #list-page + footer nav .list img, #settings-page + footer nav .settings img{
+	#home-page + footer nav .home img, #add-page + footer nav .add img, #settings-page + footer nav .settings img{
 		opacity: 1;
 	}
 
@@ -160,13 +160,30 @@ footer{
 	margin-bottom: 30px;
 }
 
+#home-page #no-children{
+	text-align: center;
+	font-size: 18px;
+}
+
+#home-page #no-children button{
+	margin-top: 15px;
+	width: 100%;
+	border: none;
+	background: #8dc73f;
+	padding: 15px 0;
+	color: #fff;
+	font-size: 13px;
+	text-shadow: 0px 2px 1px #67923e;
+	border-bottom: 6px solid #89a462;
+	border-radius: 5px;
+}
+
 #home-page ul{
 	padding: 0; margin: 0;
 }
 
 #home-page li{
 	margin: 0;
-	padding: 20px;
 	list-style-type: none;
 	border-bottom: 1px solid  #c5c3c3;
 	font-size: 20px;
@@ -178,12 +195,114 @@ footer{
 	-ms-user-select: none;
 	user-select: none;
 }
+	#home-page li .child-name{
+		padding: 20px;
+	}
+
+	#home-page li .action-icon{
+		position: relative;
+		right: 0;
+		top: -42px;
+	}
 
 	#home-page li img{
 		width: 25px;
+		position: absolute;
+		right: 20px;
 	}
 
 	#home-page li img.delete{
 		display: none;
 	}
 
+	#home-page li img.delete.animated{
+		display: block;
+	}
+
+
+#add-page #code, #add-page #name{
+	width: 80%;
+	margin:10px auto;
+}
+
+	#add-page #code input{
+		width: 100%;
+		font-family: robotoThin;
+		padding: 15px 0;
+		text-align: center;
+		color: #87b23e;
+		font-size: 32px;
+		line-height: 32px;
+		border: none;
+		border-bottom: 1px solid #c5c3c3;
+		border-radius: 0;
+		box-shadow: none;
+	}
+
+	#add-page ::-webkit-input-placeholder {
+	   color: #87b23e;
+	}
+
+	#add-page #name input{
+		width: 92%;
+		font-family: robotoThin;
+		color: #87b23e;
+		font-size: 22px;
+		line-height: 22px;
+		padding: 0 4%;
+		box-shadow: none;
+		border-radius: 0;
+		border: none;
+		background: url('../../../../images/user_ico.png') no-repeat 95% center;
+		background-size: 15px;
+
+	}
+
+#add-page #add-child{
+	width: 80%;
+	position: absolute;
+	bottom: 50px;
+	left: 10%;
+}
+
+	#add-child button{
+		width: 100%;
+		border: none;
+		background: #8dc73f;
+		padding: 13px 0;
+		color: #fff;
+		font-size: 15px;
+		text-shadow: 0px 2px 1px #67923e;
+		border-bottom: 6px solid #89a462;
+		border-radius: 5px;
+	}
+
+#settings-page p{
+	font-size: 22px;
+	text-align: center;
+	margin-bottom: 15px;
+}
+
+#settings-page .btn-group{
+	margin: 0 auto;
+	display: block;
+	width: 200px;
+}
+
+	#settings-page .btn-group .btn{
+		width: 50%;
+		border: none;
+		background: #8dc73f;
+		padding: 13px 0;
+		color: #fff;
+		font-size: 15px;
+		text-shadow: 0px 2px 1px #67923e;
+	}
+
+	#settings-page .btn-group .true{
+		background-color: #8bb947;
+	}
+
+	#settings-page .btn-group button:first-child{
+		border-right: 2px solid hsla(84, 14%, 22%, .6);
+	}

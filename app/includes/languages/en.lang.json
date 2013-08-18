@@ -13,5 +13,7 @@
 	"HEALTH" : "Health"
 	},
 "FILTER" : "Filter",
-"PREFERRED_LANG" : "Preferred Language"
+"PREFERRED_LANG" : "Preferred Language",
+"NO_CHILDREN" : "You have no Children stored",
+"ADD_CHILDREN" : "Add one now"
 }
