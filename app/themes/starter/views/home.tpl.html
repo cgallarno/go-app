@@ -6,7 +6,7 @@
 	<ul>
 		<li ng-repeat="child in children | filter:search" hm-swipe-left="toggleDelete($index)" hm-swipe-right="toggleDelete($index)">
 			<div class="child-name" hm-tap="$navigate.go('/child/' + {{ child.code }})">
-				{{ child.name }} 
+				<img ng-src="{{ photos[child.code] || 'images/user_ico_large.png' }}" class=" profile-pic pull-left" alt="">{{ child.name }} 
 			</div>
 			<span class="action-icon pull-right">
 				<img src="images/arrow-right.png" class="arrow" id="arrow-btn-{{ $index }}">

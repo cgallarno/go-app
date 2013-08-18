@@ -26,6 +26,10 @@
 }
 
 .scroller li {
+
+}
+
+#info-scroller .scroller > ul > li{
 	margin: 1.5%;
 	-webkit-touch-callout: none;
 	-webkit-user-select: none;
@@ -85,22 +89,19 @@
 				<div>
 					<h2>Stats</h2>
 					<ul>
-						<li>{{ 'CLASS.MATH' | translate }}</li>
-						<li>{{ 'CLASS.ENG' | translate }}</li>
-						<li>{{ 'CLASS.CT' | translate }}</li>
-						<li>{{ 'CLASS.SCIENCE' | translate }}</li>
-						<li>{{ 'CLASS.HISTORY' | translate }}</li>
-						<li>{{ 'CLASS.READING' | translate }}</li>
-						<li>{{ 'CLASS.HEALTH' | translate }}</li>
+						<li><h3>Test scores over time</h3><img src="images/grid1.png" alt=""></li>
+						<li ><h3>Keys hit in Typing class</h3><img src="images/chart2.png" alt=""></li>
+						<li><h3>Time spent per activity</h3><img src="images/grid3.png" alt=""></li>
+
 					</ul>
 				</div>
 			</li>
 			<li>
 				<div style="margin-left: 9px;">
-					<h2>Current Tasks</h2>
-					<ul>
-						<li ng-repeat="task in child.tasks">
-							{{ task.title }}
+					<h2>Current Tasks <span class="add-task" hm-tap="$navigate.go('/add-task/' + child.code, 'modal')"> + </span></h2>
+					<ul id="tasks">
+						<li ng-repeat="task in tasks | filter: { child_id : code }">
+							<div class="task-title">{{ task.title }}</div>
 						</li>
 					</ul>
 				</div>
@@ -108,6 +109,12 @@
 			<li>
 				<div style="margin-left: 10px;">
 					<h2>Settings</h2>
+					<div id="photo" class="pull-left">
+						<img ng-src="{{ child.photo || 'images/user_ico_large.png' }}" alt="">
+					</div>
+					<div id="photo-btn-container">
+						<button hm-tap="capturePhoto()">Take a photo</button>
+					</div>
 				</div>
 			</li>
 		</ul>

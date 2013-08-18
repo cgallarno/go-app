@@ -184,11 +184,11 @@ footer{
 	border-radius: 5px;
 }
 
-#home-page ul, #completed-page ul{
+#home-page ul, #completed-page ul, #child-page ul#tasks{
 	padding: 0; margin: 0;
 }
 
-#home-page li, #completed-page li{
+#home-page li, #completed-page li, #child-page #tasks li{
 	margin: 0;
 	list-style-type: none;
 	border-bottom: 1px solid  #c5c3c3;
@@ -209,7 +209,7 @@ footer{
 		font-size: 13px;
 	}
 
-	#home-page li .child-name, #completed-page .task-title{
+	#home-page li .child-name, #completed-page .task-title, #child-page li .task-title{
 		padding: 20px;
 	}
 
@@ -219,10 +219,15 @@ footer{
 		top: -42px;
 	}
 
-	#home-page li img{
+	#home-page li .action-icon img{
 		width: 25px;
 		position: absolute;
 		right: 20px;
+	}
+
+	#home-page li .profile-pic{
+		width: 30px;
+		margin-right: 15px;
 	}
 
 	#home-page li img.delete{
@@ -320,3 +325,95 @@ footer{
 	#settings-page .btn-group button:first-child{
 		border-right: 2px solid hsla(84, 14%, 22%, .6);
 	}
+
+
+#child-page .add-task{
+	position: relative;
+	background: #8dc73f;
+	padding: 9px 13px;
+	color: #fff;
+	font-size: 18px;
+	border-radius: 5px;
+	top: -3px;
+	left: 10px;
+	text-shadow: 0px 2px 1px #67923e;
+}
+
+#child-page #photo{
+	float: left;
+	width: 128px;
+}
+
+#child-page #photo img{
+	width: 100%;
+}
+
+#child-page #photo-btn-container{
+	float: left;
+	margin-top: 30px;
+	margin-left: 60px;
+}
+
+#child-page #photo-btn-container button{
+	padding: 15px;
+	background: #8dc73f;
+	border-radius: 5px;
+	border: none;
+	color: #fff;
+	text-shadow: 0px 2px 1px #67923e;
+}
+
+#add-task-page .content{
+	background: #fff;
+}
+
+	#add-task-page div{
+		width: 80%;
+		text-align: center;
+		margin: 0 auto;
+	}
+
+	#add-task-page input{
+		width: 100%;
+		font-family: robotoThin;
+		padding: 15px 0;
+		text-align: center;
+		color: #87b23e;
+		font-size: 32px;
+		line-height: 32px;
+		border: none;
+		border-bottom: 1px solid #c5c3c3;
+		border-radius: 0;
+		box-shadow: none;
+	}
+
+	#add-task-page ::-webkit-input-placeholder {
+	   color: #87b23e;
+	}
+
+	#add-task-page #points input{
+		width: 92%;
+		font-family: robotoThin;
+		color: #87b23e;
+		font-size: 22px;
+		line-height: 22px;
+		padding: 0 4%;
+		box-shadow: none;
+		border-radius: 0;
+		border: none;
+
+	}
+
+	#add-task-page button{
+		margin-top: 100px;
+		width: 100%;
+		border: none;
+		background: #8dc73f;
+		padding: 13px 0;
+		color: #fff;
+		font-size: 15px;
+		text-shadow: 0px 2px 1px #67923e;
+		border-bottom: 6px solid #89a462;
+		border-radius: 5px;
+	}
+

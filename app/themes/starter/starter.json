@@ -48,6 +48,14 @@
 			"controller" : "completedController",
 			"id" : "completed-page"
 		},
+		{
+			"path" : "/add-task/:code",
+			"template" : "add-task",
+			"layout" : "layouts/main",
+			"controller" : "addTaskController",
+			"id" : "add-task-page"
+
+		},
 		{ "otherwise" : "/login" }
 	]
 }
