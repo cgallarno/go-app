@@ -121,7 +121,7 @@ header{
 footer{
 	height: 75px;
 	background-color: #a1c83a;
-	position: fixed;
+	position: absolute;
 	width: 100%;
 	bottom: 0;
 }

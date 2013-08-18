@@ -1,4 +1,15 @@
 'use strict';
+document.addEventListener("deviceready", function(){
+	document.addEventListener("showkeyboard", function() {
+	    $('#main-footer').hide();
+	    $('.content').css('bottom', '0');
+	}, false);
+	document.addEventListener("hidekeyboard", function() {
+	    $('#main-footer').show();
+	    $('.content').css('bottom', '75px');
+
+	}, false);
+});
 
 $app.run(function($rootScope, plus){	
 	// $rootScope.$on('$routeChangeStart', function(){
@@ -109,6 +120,23 @@ $app.controller('addController', function($scope){
 		localStorage.children = angular.toJson($scope.children);
 		$navigate.go('/home', 'slide', true);
 	}
+
+
+	var getNfc = setInterval(function(){
+		if(!_.isUndefined(nfc)){
+			clearInterval(getNfc);
+			nfc.addNdefListener(function(nfcEvent){
+				var some_value = nfcEvent.tag.ndefMessage[0]["payload"];
+				var string_value = nfc.bytesToString(some_value);
+        		var code = string_value.substr(3);
+        		$scope.child.code = code;
+        		if(!$scope.$$phase){
+        			$scope.$apply();
+        		}
+			}, function(){ console.log('success')}, function(){console.log('failure')});
+		}
+	}, 1000);
+
 });
 
 $app.controller('settingsController', function($scope, $translate){

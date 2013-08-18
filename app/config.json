@@ -22,5 +22,5 @@
 	/*
 	 * This array specifies the names of javascript files in your app/includes/scripts folder
 	 */
-	"scripts" : ["controllers"]
+	"scripts" : ["controllers", "nfc"]
 }
