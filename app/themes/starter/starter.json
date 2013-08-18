@@ -16,7 +16,9 @@
 		{
 			"path" : "/home",
 			"template" : "home",
-			"controller" : "homeController"
+			"layout" : "layouts/main",
+			"controller" : "homeController",
+			"id" : "home-page"
 		},
 		{ "otherwise" : "/login" }
 	]

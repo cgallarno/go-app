@@ -1,11 +1,11 @@
 'use strict';
 
 $app.run(function($rootScope){	
-	$rootScope.$on('$routeChangeStart', function(){
-		if(!plus.auth.isLoggedIn()){
-			$navigate.go('/login');
-		}
-	});
+	// $rootScope.$on('$routeChangeStart', function(){
+	// 	if(!plus.auth.isLoggedIn()){
+	// 		$navigate.go('/login');
+	// 	}
+	// });
 });
 
 $app.controller('loginController', function($scope, $navigate, $timeout){
@@ -31,6 +31,5 @@ $app.controller('loginController', function($scope, $navigate, $timeout){
 });
 
 $app.controller('homeController', function ($scope) {
-
 
 });

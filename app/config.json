@@ -11,6 +11,8 @@
 	 * Specify the name of the desired theme
 	 */
 	"theme" : "starter",
+	"preferred_language" : "en",
+	"languages" : ["en", "es"],
 
 	/*
 	 * plugins add to the functionality of Plus.io Frontend

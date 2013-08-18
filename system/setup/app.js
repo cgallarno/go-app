@@ -23,21 +23,27 @@ angular.module('app', ['app.dependencies']).
     var waitForLanguages = setInterval(function(){
       if(_.keys(settings.languages).length == settings.app.languages.length){
         clearInterval(waitForLanguages);
-        if(settings.languages.preferredLanguage !== false && !_.isEmpty(settings.languages)){
+        if(settings.app.preferred_language !== false && !_.isEmpty(settings.languages)){
           _.each(settings.languages, function(val, key){
             $translateProvider.translations(key, val);
           });
 
-          $translateProvider.uses(settings.app.preferred_language);
+          $translateProvider.uses('es');
           $translateProvider.useLocalStorage();
         }
       }
-    }, 500);
-    
+    }, 200);    
 
     // Allow Cross Origin Domain requests
     delete $httpProvider.defaults.headers.common['X-Requested-With']
   }).run(function($rootScope, $navigate, plus, $translate, geolocation, geofence, $window){
+
+    // $rootScope.setLanguage = function (langKey) {
+    //   $translate.uses(langKey);
+    // };
+
+    //$rootScope.setLanguage = $translate.uses;
+
 
   	var geoloc= { status : 0, message : 'PositionNotSet' };
 
@@ -119,9 +125,9 @@ angular.module('app', ['app.dependencies']).
 
     if(settings.languages.preferredLanguage !== false && !_.isEmpty(settings.languages)){
       //console.log(settings);
-	    $rootScope.setLanguage = function (langKey) {
-	      $translate.uses(langKey);
-	    };
+	    // $rootScope.setLanguage = function (langKey) {
+	    //   $translate.uses(langKey);
+	    // };
     }
 
     // check data syncing settings before attempt to start sync loop

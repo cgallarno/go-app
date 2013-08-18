@@ -1,0 +1,17 @@
+{
+"GOOGLE_LOGIN" : "Login with Google",
+"ENTER_CODE" : "Enter Code",
+"NAME" : "Name",
+"ADD_CHILD" : "Add Child",
+"CLASS" : {
+	"MATH" : "Math",
+	"ENG" : "English",
+	"CT" : "Critical Thinking",
+	"SCIENCE" : "Science",
+	"HISTORY" : "History",
+	"READING" : "Reading",
+	"HEALTH" : "Health"
+	},
+"FILTER" : "Filter",
+"PREFERRED_LANG" : "Preferred Language"
+}

@@ -1,3 +1,7 @@
+body{
+	font-family: robotoThin;
+}
+
 #login-page{
 	background: #a5cc39;
 	background: -moz-linear-gradient(top, #a5cc39 0%, #77a741 100%);
@@ -38,3 +42,141 @@
 			border-bottom: 5px solid #6a923b;
 			padding-bottom: 10px;
 		}
+
+
+header{
+	height: 75px;
+	background: #a1c83a;
+	position: fixed;
+	z-index: 1;
+	width: 100%;
+	top: 0;
+}
+
+	header #logo{
+		float: left;
+		margin-top: 22px;
+		margin-left: 20px;
+	}
+
+		header #logo img{
+			height: 30px;
+		}
+
+	header #completed{
+		background-color: #83b03f;
+		position: relative;
+		height: 100%;
+		width: 75px;
+		float: right;
+		text-align: center;
+		line-height: 75px;
+	}
+
+		#completed img{
+			width: 30px;
+		}
+
+		#completed .notifications{
+			position: absolute;
+			width: 40px;
+			height:40px;
+			border-radius: 20px;
+			background-color: #612a7c;
+			bottom: -20px;
+			left: -20px;
+			text-align: center;
+			line-height: 40px;
+			font-size: 16px;
+			color: #fff;
+		}
+
+.content{
+	position: absolute;
+	top: 75px;
+	bottom: 75px;
+	left: 0;
+	right: 0;
+	padding: 50px 20px 0;
+}
+
+	.content .scroller{
+		padding-bottom: 100px;
+	}
+
+
+footer{
+	height: 75px;
+	background-color: #a1c83a;
+	position: fixed;
+	width: 100%;
+	bottom: 0;
+}
+
+	footer #nav{
+		padding-left: 5%;
+		padding-right: 5%;
+	}
+
+	#nav li{
+		display: inline-block;
+		width: 30%;
+		text-align: center;
+		line-height: 75px;
+	}
+
+	#nav li img{
+		width: 30px;
+		opacity: .4;
+	}
+
+	#home-page + footer nav .home, #list-page + footer nav .list, #settings-page + footer nav .settings{
+		background: #8bb947;
+	}
+
+	#home-page + footer nav .home img, #list-page + footer nav .list img, #settings-page + footer nav .settings img{
+		opacity: 1;
+	}
+
+#home-page #child-filter{
+	width: 92%;
+	padding: 20px 4%;
+	border: 1px solid #c5c3c3;
+	margin-left: -1px;
+	font-size: 18px;
+	font-family: robotoThin;
+	background: url('../../../../images/search-icon.png') no-repeat 95% center; 
+	background-size: 28px;
+}
+
+#home-page #search-box{
+	margin-bottom: 30px;
+}
+
+#home-page ul{
+	padding: 0; margin: 0;
+}
+
+#home-page li{
+	margin: 0;
+	padding: 20px;
+	list-style-type: none;
+	border-bottom: 1px solid  #c5c3c3;
+	font-size: 20px;
+	color: #87b23e;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+	#home-page li img{
+		width: 25px;
+	}
+
+	#home-page li img.delete{
+		display: none;
+	}
+

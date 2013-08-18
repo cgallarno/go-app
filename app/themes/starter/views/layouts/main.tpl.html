@@ -1,0 +1,24 @@
+<header>
+	<div id="logo">
+		<img src="images/logo_small.png" alt="">
+	</div>
+
+	<div id="completed" hm-tap="$navigate.go('/completed')">
+		<div class="notifications">5</div>
+		<img src="images/tasks.png" alt="">
+	</div>
+</header>
+<div id="scroll-area" class="content" scrollable params="{{ {} }}">
+	<div id="{{ page.id }}" plus-template>
+</div>
+	
+</div>
+<footer>
+	<nav id="nav">
+		<ul>
+			<li class="home" hm-tap="$navigate.go('/home')"><img src="images/home_ico.png" alt=""></li>
+			<li class="add" hm-tap="$navigate.go('/add')"><img src="images/add_ico.png" alt=""></li>
+			<li class="settings" hm-tap="$navigate.go('/settings')"><img src="images/settings_ico.png" alt=""></li>
+		</ul>
+	</nav>
+</footer>
