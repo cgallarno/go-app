@@ -1,0 +1,18 @@
+<div id="scroll-area" class="content" scrollable parameters="{{ {} }}">
+	<div id="search-box">
+		<input type="text" id="completed-filter" ng-model="search" placeholder="{{ 'FILTER' | translate }}">
+	</div>
+	<ul>
+		<li ng-repeat="task in completed | filter:search" hm-tap="approve(task.id, $index)" class="{{ task.class }}">
+			<div class="task-title">
+				{{ task.title }}
+				<br>
+				<div class="completed-by">completed by : {{ task.name }} for {{task.points}} points. <span class="pull-right">Assigned by: {{ task.assign }}</span></div>
+			</div>
+		</li>
+	</ul>
+
+	<div id="no-completed" ng-hide="children.length">
+		<div>{{ 'NO_CHILDREN' | translate }}.</div>
+	</div>
+</div>

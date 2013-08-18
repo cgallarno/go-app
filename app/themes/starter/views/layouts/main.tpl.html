@@ -4,8 +4,8 @@
 	</div>
 
 	<div id="completed" hm-tap="$navigate.go('/completed')">
-		<div class="notifications">5</div>
-		<img src="images/tasks.png" alt="">
+		<div class="notifications" ng-show="completed.length">{{ completed.length }}</div>
+		<img ng-src="images/tasks{{ !completed && '_empty' || '' }}.png" alt="">
 	</div>
 </header>
 <div id="{{ page.id }}" plus-template>

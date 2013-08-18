@@ -41,6 +41,13 @@
 			"controller" : "childController",
 			"id" : "child-page"
 		},
+		{
+			"path" : "/completed",
+			"template" : "completed",
+			"layout" : "layouts/main",
+			"controller" : "completedController",
+			"id" : "completed-page"
+		},
 		{ "otherwise" : "/login" }
 	]
 }
